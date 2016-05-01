@@ -30,9 +30,9 @@ module.exports = function (errors, options) {
 		});
 	}
 
-	if (options.logger && !isFunction(options.logger)) {
+	if (logger && Object.prototype.toString.call(logger) !== '[object Object]') {
 		throw new Howhap({
-			message: 'options.logger must be a function',
+			message: 'options.logger must be an object',
 			status: 500
 		});
 	}

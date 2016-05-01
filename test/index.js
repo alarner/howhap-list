@@ -33,8 +33,8 @@ describe('HowhapList', function() {
 		});
 
 		it('should enforce that options.logger is a function', function() {
-			expect(() => { new HowhapList(null, {availableErrors: 7}); }).to.throw('options.availableErrors must be an object');
-			expect(() => { new HowhapList(null, {availableErrors: 'test'}); }).to.throw('options.availableErrors must be an object');
+			expect(() => { new HowhapList(null, {logger: 7}); }).to.throw('options.logger must be an object');
+			expect(() => { new HowhapList(null, {logger: 'test'}); }).to.throw('options.logger must be an object');
 		});
 
 		it('should work with no params', function() {

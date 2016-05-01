@@ -1,6 +1,6 @@
 {
   "name": "howhap-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easy to maipulate list of howhap errors",
   "main": "dist/index.js",
   "scripts": {
@@ -12,13 +12,10 @@
     "url": "git+https://github.com/alarner/howhap-list.git"
   },
   "author": "Aaron Larner",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alarner/howhap-list/issues"
   },
-  "homepage": "https://github.com/alarner/howhap-list#readme",
-  "author": "Aaron Larner",
-  "license": "MIT",
   "homepage": "https://github.com/alarner/bookshelf-api#readme",
   "devDependencies": {
     "babel-cli": "^6.7.7",

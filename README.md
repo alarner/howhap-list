@@ -186,7 +186,7 @@ let list = new HowhapList(null, {
                 status: 404
             },
             PERMISSION_DENIED: {
-            	message: 'You don't have permission to {{action}} the resource {{resource}}',
+            	message: 'You don\'t have permission to {{action}} the resource {{resource}}',
                 status: 401
             }
         },

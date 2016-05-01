@@ -142,9 +142,9 @@ Returns a JSON representation of the howhap list.
 let plainObject = list.toJSON();
 ```
 
-### display
+### HowhapList.display(key)
 
-Displays a specific error based on its key
+Displays a specific error based on its (optional) key
 
 ```js
 let list = new HowhapList({

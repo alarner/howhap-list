@@ -136,10 +136,18 @@ list.remove('default');
 
 ### HowhapList.toJSON()
 
-Returns a JSON representation of the howhap list.
+Returns a JSON representation of the howhap list with error objects rendered to strings.
 
 ```js
 let plainObject = list.toJSON();
+```
+
+### HowhapList.toObject()
+
+Returns a JSON representation of the howhap list with error objects preserved.
+
+```js
+let plainObject = list.toObject();
 ```
 
 ### HowhapList.display(key)

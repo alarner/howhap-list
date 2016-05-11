@@ -95,10 +95,10 @@ describe('HowhapList', function() {
 
 		it('should work when adding multiple errors with different keys', function() {
 			l.add('default', 'key1');
-			expect(l.toJSON().key1.message).to.equal('Something went wrong');
+			expect(l.toObject().key1.message).to.equal('Something went wrong');
 			l.add('form.default', 'key2');
-			expect(l.toJSON().key1.message).to.equal('Something went wrong');
-			expect(l.toJSON().key2.message).to.equal('Default form error');
+			expect(l.toObject().key1.message).to.equal('Something went wrong');
+			expect(l.toObject().key2.message).to.equal('Default form error');
 		});
 	});
 
@@ -131,9 +131,29 @@ describe('HowhapList', function() {
 	});
 
 	describe('toJSON', function() {
+		it('should respond with formatted errors', function() {
+			let l = new HowhapList(startingErrors);
+			expect(l.toJSON()).to.deep.equal({
+				default: 'Something went wrong',
+				email: '"test@test.com" is not a valid email.',
+				form: 'Default form error'
+			});
+		});
+		it('should work when an error is added', function() {
+			let l = new HowhapList();
+			l.add({
+				message: 'Test error {{ what }}',
+				status: 400
+			}, { what: 'foo' }, 'foo');
+			expect(l.toJSON()).to.deep.equal({
+				foo: 'Test error foo'
+			});
+		});	
+	});
+	describe('toObject', function() {
 		it('should respond with what it was given in the constructor if no changes are made', function() {
 			let l = new HowhapList(startingErrors);
-			expect(l.toJSON()).to.deep.equal(startingErrors);
+			expect(l.toObject()).to.deep.equal(startingErrors);
 		});
 		it('should work when an error is added', function() {
 			let l = new HowhapList();
@@ -141,7 +161,7 @@ describe('HowhapList', function() {
 				message: 'Test error',
 				status: 400
 			}, 'foo');
-			expect(l.toJSON()).to.deep.equal({
+			expect(l.toObject()).to.deep.equal({
 				foo: {
 					message: 'Test error',
 					status: 400,

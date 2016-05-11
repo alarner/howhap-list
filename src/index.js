@@ -70,6 +70,14 @@ module.exports = function(errors, options) {
 	this.toJSON = function() {
 		let returnErrors = {};
 		for(let i in this.errors) {
+			returnErrors[i] = this.errors[i].toString();
+		};
+		return returnErrors;
+	};
+
+	this.toObject = function() {
+		let returnErrors = {};
+		for(let i in this.errors) {
 			returnErrors[i] = this.errors[i].toJSON();
 		};
 		return returnErrors;

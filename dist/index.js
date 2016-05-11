@@ -68,7 +68,15 @@ module.exports = function (errors, options) {
 	this.toJSON = function () {
 		var returnErrors = {};
 		for (var _i in this.errors) {
-			returnErrors[_i] = this.errors[_i].toJSON();
+			returnErrors[_i] = this.errors[_i].toString();
+		};
+		return returnErrors;
+	};
+
+	this.toObject = function () {
+		var returnErrors = {};
+		for (var _i2 in this.errors) {
+			returnErrors[_i2] = this.errors[_i2].toJSON();
 		};
 		return returnErrors;
 	};
@@ -94,8 +102,8 @@ module.exports = function (errors, options) {
 		// the appropriate nested property.
 		var props = descriptor.split('.');
 		var target = availableErrors;
-		for (var _i2 = 0; _i2 < props.length; _i2++) {
-			var prop = props[_i2];
+		for (var _i3 = 0; _i3 < props.length; _i3++) {
+			var prop = props[_i3];
 			if (target.hasOwnProperty(prop)) {
 				target = target[prop];
 			} else {

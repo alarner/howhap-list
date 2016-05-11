@@ -1,6 +1,6 @@
 {
   "name": "howhap-list",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "An easy to maipulate list of howhap errors",
   "main": "dist/index.js",
   "scripts": {

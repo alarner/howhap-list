@@ -1,11 +1,11 @@
 {
   "name": "howhap-list",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "An easy to maipulate list of howhap errors",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register",
-    "build": "./node_modules/.bin/babel src -d dist"
+    "build": "./node_modules/.bin/babel src -d dist --presets=es2015"
   },
   "repository": {
     "type": "git",

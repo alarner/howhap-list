@@ -82,8 +82,8 @@ module.exports = function (errors, options) {
 	};
 
 	this.display = function () {
-		var key = arguments.length <= 0 || arguments[0] === undefined ? 'default' : arguments[0];
-		var defaultValue = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+		var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'default';
+		var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
 		if (!this.errors.hasOwnProperty(key)) {
 			return defaultValue;
